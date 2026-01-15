@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official website of a dark romance, psychological, and philosophical fiction author">
+    <title>Author Portfolio | Dark Romance & Philosophical Fiction</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-transition"></div>
+    
+    <header>
+        <div class="header-content">
+            <h1 class="author-name">Alaric Dusk</h1>
+            <p class="author-tagline">Dark Romance & Philosophical Fiction</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to My Literary World</h2>
+                <p>Exploring the depths of human psychology through dark romance and philosophical fiction.</p>
+                <a href="#books" class="cta-button">Explore My Books</a>
+            </div>
+        </section>
+
+        <section id="books" class="book-gallery">
+  <h2>Featured Titles</h2>
+  <div class="book-box-container">
+    <!-- Ashes Beneath Velvet -->
+    <a href="https://www.wattpad.com/story/401544342-ashes-beneath-velvet" target="_blank" class="book-box">
+      <img src="images/ashes-beneath-velvet-cover.png.jpg" alt="Ashes Beneath Velvet Cover">
+    </a>
+
+    <!-- Upcoming Book 1 (blank placeholder) -->
+    <div class="book-box upcoming">
+      <p>Upcoming Book 2</p>
+    </div>
+
+    <!-- Upcoming Book 2 (blank placeholder, centered) -->
+    <div class="book-box upcoming">
+      <p>Upcoming Book 3</p>
+    </div>
+  </div>
+</section>
+
+
+        <section id="about" class="about-section">
+            <h2>About the Author</h2>
+            <div class="about-content">
+                <div class="author-bio" id="author-bio">
+                    <p>I am a passionate writer dedicated to exploring the darker side of love and desire. Through my stories, I invite readers into intense emotional landscapes where romance intertwines with obsession, vulnerability, and the shadows of human connection.</p>
+                    <p>My work on Wattpad has allowed me to connect with readers who appreciate the raw intensity and psychological depth of dark romance. I believe the most powerful stories are those that push us beyond the surface, revealing the complexities of passion and the truths hidden within the heart.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://www.wattpad.com/user/ALARICDUSK" target="_blank" class="social-link" title="Read my stories on Wattpad">
+                    <img src="images/wattpad-logo.png" alt="Wattpad" class="social-icon"> Wattpad
+                </a>
+                <a href="https://www.instagram.com/__yugg.09/" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yugwankhede09@gmail.com" target="_blank" class="social-link" title="Send a message to Alaric Dusk">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> Alaric Dusk. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for adding/editing books -->
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add/Edit Book</h3>
+            <form id="book-form">
+                <div class="form-group">
+                    <label for="book-title">Title:</label>
+                    <input type="text" id="book-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-wattpad-url">Wattpad URL:</label>
+                    <input type="url" id="book-wattpad-url" required placeholder="https://www.wattpad.com/story/...">
+                </div>
+                <div class="form-group">
+                    <label for="book-description">Short Description:</label>
+                    <textarea id="book-description" rows="4" required></textarea>
+                </div>
+                <input type="hidden" id="book-id">
+                <button type="submit" class="save-button">Save Book</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="user-fab" id="user-fab">
+        <button id="main-fab-btn"><i class="fas fa-plus"></i></button>
+        <ul class="fab-options">
+            <li><a href="#books" title="Explore Books"><i class="fas fa-book-open"></i></a></li>
+            <li><a href="#about" title="About the Author"><i class="fas fa-user"></i></a></li>
+            <li><a href="mailto:yugwankhede09@gmail.com" title="Contact Me"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://www.wattpad.com/user/ALARICDUSK" title="Read on Wattpad" target="_blank"><i class="fas fa-feather-alt"></i></a></li>
+        </ul>
+    </div>
+<script>
+  const mainFabBtn = document.getElementById('main-fab-btn');
+  const fabOptions = document.querySelector('.fab-options');
+  const fabItems = document.querySelectorAll('.fab-options li');
+
+  mainFabBtn.addEventListener('click', () => {
+    const isVisible = fabOptions.style.display === 'flex';
+    fabOptions.style.display = isVisible ? 'none' : 'flex';
+
+    if (!isVisible) {
+      [...fabItems].reverse().forEach((item, index) => {
+        const icon = item.querySelector('i');
+        item.style.pointerEvents = 'auto';
+        item.style.animation = 'none';
+        icon.style.animation = 'none';
+        void item.offsetWidth;
+        item.style.animation = `cardFlipRight 0.4s ease forwards ${0.1 * (index + 1)}s`;
+        icon.style.animation = `spin 0.6s ease ${0.1 * (index + 1)}s`;
+      });
+    } else {
+      fabItems.forEach(item => {
+        const icon = item.querySelector('i');
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(40px) rotateY(-90deg)';
+        item.style.pointerEvents = 'none';
+        icon.style.animation = 'none';
+      });
+    }
+  });
+</script>
+</html>
